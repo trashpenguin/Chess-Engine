@@ -23,7 +23,8 @@ exit(1);}
 
 /*  MACROS   */
 #define FR2SQ(f,r)( (21 + (f) ) + ( (r) * 10 ) )
-#define SQ64(sq120) Sq120ToSq64[sq120]
+#define SQ64(sq120) (Sq120ToSq64[(sq120)])
+#define SQ120(sq64) (Sq64ToSq120[(sq64)])
 #define Pop(b) PopBit(b)
 #define CNT(b) CountBits(b)
 #define CLRBIT(bb,sq) ((bb) &= ClearMask[(sq)])
@@ -125,5 +126,8 @@ extern int PopBit(U64 *bb);
 
 /*  HUSHKEYS  */
 extern U64 GeneratePosKey(const S_BOARD *pos);
+
+// BOARD 
+extern void ResetBoard (S_BOARD *pos);
 
 #endif

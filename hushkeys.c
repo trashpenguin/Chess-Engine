@@ -1,5 +1,4 @@
-#define "defs.h"
-
+#include "defs.h"
 
 U64 GeneratePosKey(const S_BOARD *pos){
 	
@@ -17,7 +16,7 @@ U64 GeneratePosKey(const S_BOARD *pos){
 		}
 	}
 	if(pos->side == WHITE){
-		finalKey ^= SideKey;
+		finalKey ^= SideKeys;
 	}
 	if(pos->enPas != NO_SQ){
 		finalKey ^= PieceKeys[EMPTY][pos->enPas];

@@ -42,7 +42,7 @@ int Parse_Fen (char *fen, S_BOARD *pos){
 			 case '6':
 			 case '7':
 			 case '8':
-				piece = EMPTY
+				piece = EMPTY;
 				count = *fen - '0';
 				break;
 				
@@ -64,7 +64,7 @@ int Parse_Fen (char *fen, S_BOARD *pos){
 			 sq64 = rank * 8 + file;
 			 sq120 = SQ120 (sq64);
 			 if (piece != EMPTY){
-				 pos->piece[sq120] = piece;
+				 pos->pieces[sq120] = piece;
 			 }
 			 file++;
 		 }
@@ -78,7 +78,7 @@ int Parse_Fen (char *fen, S_BOARD *pos){
 			break;
 		}
 		switch(*fen){
-			case 'k': pos->castlePerm |= WKCA; break;
+			case 'K': pos->castlePerm |= WKCA; break;
 			case 'Q': pos->castlePerm |= WQCA; break;
 			case 'k': pos->castlePerm |= BKCA; break;
 			case 'q': pos->castlePerm |= BQCA; break;
@@ -104,7 +104,7 @@ void ResetBoard (S_BOARD *pos){
 	 
 	int index = 0;
 	for ( index = 0; index < BRD_SQ_NUM; ++index){
-		pos->pieces[index]=OFFBOARD;
+		pos->pieces[index]= OFFBOARD;
 	}
 	for ( index = 0; index < 64; ++index) {
 		pos->pieces[SQ120(index)]=EMPTY;
@@ -119,14 +119,15 @@ void ResetBoard (S_BOARD *pos){
 	for ( index = 0; index < 13; ++index ){
 		pos->pceNum[index] = 0;
 	}
-	pos->KingSq[WHITE] = pos->KingSq[BLACK] = NO_SQ
+	
+	pos->KingSq[WHITE] = pos->KingSq[BLACK] = NO_SQ;
 	
 	pos->side = BOTH;
 	pos->enPas = NO_SQ;
 	pos->fiftyMove = 0;
 	
 	pos->ply = 0;
-	pos->hisPly = 0;
+	pos->hisply = 0;
 	
 	pos->castlePerm = 0;
 	pos->posKey = 0ULL;

@@ -138,5 +138,5 @@ extern U64 GeneratePosKey(const S_BOARD *pos);
 extern void ResetBoard (S_BOARD *pos);
 extern int ParseFen (char *fen, S_BOARD *pos);
 extern void PrintBoard(const S_BOARD *pos);
-
+extern void UpdateListMaterial (S_BOARD *pos);
 #endif

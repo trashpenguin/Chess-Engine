@@ -1,5 +1,12 @@
 # VICE Chess Engine
 
+![Language](https://img.shields.io/badge/language-C-blue.svg)
+![Protocol](https://img.shields.io/badge/protocol-UCI-brightgreen.svg)
+![Compiler](https://img.shields.io/badge/compiler-GCC%2015-orange.svg)
+![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux%20%7C%20macOS-lightgrey.svg)
+![License](https://img.shields.io/badge/license-Unlicensed-red.svg)
+![Status](https://img.shields.io/badge/status-working-success.svg)
+
 A fully working C chess engine that communicates over the UCI protocol. It supports any UCI-compatible GUI (Arena, Cute Chess, Lucas Chess, etc.) and can search positions to arbitrary depth using iterative-deepening alpha-beta with quiescence search.
 
 ## Features
